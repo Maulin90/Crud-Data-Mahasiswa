@@ -8,9 +8,3 @@ Route::get('/', function () {
 });
 
 Route::resource('mahasiswa', MahasiswaController::class);
-Route::get('mahasiswa/pdf', [MahasiswaController::class, 'exportPdf'])->name('mahasiswa.pdf');
-
-Route::get('/mahasiswa/pdf-preview', function () {
-    $mahasiswas = Mahasiswa::all();
-    return view('mahasiswa.pdf', compact('mahasiswas'));
-});
